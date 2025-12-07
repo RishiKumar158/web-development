@@ -1,32 +1,16 @@
-let h1Element = document.body.firstElementChild;
-h1Element = document.body.children[0];
-h1Element = document.getElementById("first-title");
+let paragraphElement = document.querySelector('p');
 
-console.dir(h1Element)
+function changeParagraphText() {
+    paragraphElement.textContent = "Clicked!!";
+}
 
-let parentElement = h1Element.parentElement;
+paragraphElement.addEventListener("click", changeParagraphText);
 
-let highlightedParagrapgh = document.querySelector('.highlighted-paragraph');
+let inputElement = document.querySelector('input');
 
-console.dir(highlightedParagrapgh);
+function retrieveUserInput(event) {
+    let enteredText = event.target.value;
+    console.log(enteredText);
+}
 
-let anchorElement = document.querySelector("p a");
-console.log(anchorElement);
-
-highlightedParagrapgh.textContent = "This is changed by Rishi!";
-
-let newAnchorElement = document.createElement('a');
-newAnchorElement.href = "https:www.google.com";
-newAnchorElement.textContent = " leads to google"
-
-let firstParagraph = document.querySelector('p');
-
-firstParagraph.append(newAnchorElement);
-
-h1Element.remove();
-
-firstParagraph.parentElement.append(firstParagraph);
-
-firstParagraph.innerHTML = "Hi This is <strong>important</strong>";
-
- 
+inputElement.addEventListener('input', retrieveUserInput);
